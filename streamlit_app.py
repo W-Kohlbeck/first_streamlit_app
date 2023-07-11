@@ -27,3 +27,8 @@ sl.header('Fruityvice Fruit Advice!')
 import requests as req
 fruityvice_response = req.get("https://fruityvice.com/api/fruit/watermelon")
 sl.text(fruityvice_response.json())
+
+# Normalize JSON info
+fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
+# Place normalized data into table
+sl.dataframe(fruityvice_normalized)
