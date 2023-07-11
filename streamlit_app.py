@@ -1,15 +1,22 @@
-import streamlit
+import streamlit as sl
 
-streamlit.title("My Mom's New Healthy Diner")
+sl.title("My Mom's New Healthy Diner")
 
-streamlit.header('Breakfast Favorites')
-streamlit.text('🥣 Omega 3 & Blueberry Oatmeal')
-streamlit.text('🥗 Kale, Spinach & Rocket Smoothie')
-streamlit.text('🐔 Hard-Boiled Free-Range Egg')
-streamlit.text('🥑🍞 Avocado Toast')
+sl.header('Breakfast Favorites')
+sl.text('🥣 Omega 3 & Blueberry Oatmeal')
+sl.text('🥗 Kale, Spinach & Rocket Smoothie')
+sl.text('🐔 Hard-Boiled Free-Range Egg')
+sl.text('🥑🍞 Avocado Toast')
 
-streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
+sl.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
-import pandas
-my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
-streamlit.dataframe(my_fruit_list)
+import pandas as pd
+my_fruit_list = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
+
+# Adding a pick list so customers can pick the fruit to include in smoothie
+sl.multiselect("Pick some Fruits:", list(my_fruit_list.index))
+
+# Display table on page
+sl.dataframe(my_fruit_list)
+
+
