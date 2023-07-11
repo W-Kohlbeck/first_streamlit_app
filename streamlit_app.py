@@ -15,7 +15,7 @@ my_fruit_list = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/da
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
 # Adding a pick list so customers can pick the fruit to include in smoothie
-sl.multiselect("Pick some Fruits:", list(my_fruit_list.index))
+sl.multiselect("Pick some Fruits:", list(my_fruit_list.index), ['Avacodo','Strawberries'])
 
 # Display table on page
 sl.dataframe(my_fruit_list)
