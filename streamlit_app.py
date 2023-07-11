@@ -22,6 +22,8 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 sl.dataframe(fruits_to_show)
 
 # New section for fruityvice API response
-import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-sl.text(fruityvice_response)
+sl.header('Fruityvice Fruit Advice!')
+
+import requests as req
+fruityvice_response = req.get("https://fruityvice.com/api/fruit/watermelon")
+sl.text(fruityvice_response.json())
