@@ -44,5 +44,5 @@ sl.header("The fruit load list contains:")
 sl.dataframe(my_data_rows)
 
 # text box to add fruit
-add_my_fruit = sl.text_input('What fruit would you like to add?','Kiwi')
-sl.write('The user entered ', fruit_choice)
+add_my_fruit = sl.text_input('What fruit would you like to add?','Jackfruit')
+sl.write('The user entered ', add_my_fruit)
