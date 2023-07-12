@@ -54,10 +54,11 @@ def get_fruit_load_list():
 # Add a button to load the fruit
 if sl.button('Get Fruit Load List'):
     my_cnx = snowflake.connector.connect(**sl.secrets["snowflake"])
-# troubleshooting
-sl.stop()    
     my_data_rows = get_fruit_load_list()
     sl.dataframe(my_data_rows)
+
+# troubleshooting
+sl.stop()    
 
 # text box to add fruit
 add_my_fruit = sl.text_input('What fruit would you like to add?','Jackfruit')
